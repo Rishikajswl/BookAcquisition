@@ -17,10 +17,7 @@ const URI = process.env.MONGODBURI;
 
 //connection to DB
 try {
- mongoose.connect (URI,{
-    useNewUrlParser:true,
-    useUnifiedTopology: true
- }); 
+ mongoose.connect(URI); 
  console.log("Connected to mongoDB");
 } 
 catch(error) {
@@ -30,6 +27,7 @@ catch(error) {
 //define route
 app.use("/book",bookRoute)
 app.use("/user",userRoute);
+
 
 app.listen(PORT,()=>{
     console.log(`Port is running on ${PORT}`);
